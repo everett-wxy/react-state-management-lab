@@ -128,8 +128,11 @@ const ReactApp = () => {
       <h3>Money: {money}</h3>
       <h3>Total strength: {totalStrength}</h3>
       <h3>Total agility: {totalAgility}</h3>
-      <h3>{team.length === 0 ? "Add some team members!" : ""}</h3>
+      <br />
+      <h1>Team:</h1>
       <ul>
+    
+        <h3>{team.length === 0 ? "Add some team members!" : ""}</h3>
         {team.map((element, idx) => (
           <li key={idx}>
             <img src={element.img} />
@@ -147,8 +150,9 @@ const ReactApp = () => {
           </li>
         ))}
       </ul>
-
+      <h1>Available Fighters:</h1>
       <ul>
+        
         {zombieFighters.map((element, idx) => (
           <li key={idx}>
             <img src={element.img} />
