@@ -129,43 +129,43 @@ const ReactApp = () => {
       <h3>Total strength: {totalStrength}</h3>
       <h3>Total agility: {totalAgility}</h3>
       <h3>{team.length === 0 ? "Add some team members!" : ""}</h3>
-      {team.map((element, idx) => (
-        <ul key={idx}>
-          <li>
+      <ul>
+        {team.map((element, idx) => (
+          <li key={idx}>
             <img src={element.img} />
+            <p>name: {element.name}</p>
+            <p>price: {element.price}</p>
+            <p>strength: {element.strength}</p>
+            <p>agility: {element.agility}</p>
+            <button
+              onClick={() => {
+                handleRemoveFighter(element);
+              }}
+            >
+              remove
+            </button>
           </li>
-          <li>name: {element.name}</li>
-          <li>price: {element.price}</li>
-          <li>strength: {element.strength}</li>
-          <li>agility: {element.agility}</li>
-          <button
-            onClick={() => {
-              handleRemoveFighter(element);
-            }}
-          >
-            remove
-          </button>
-        </ul>
-      ))}
+        ))}
+      </ul>
 
-      {zombieFighters.map((element, idx) => (
-        <ul key={idx}>
-          <li>
+      <ul>
+        {zombieFighters.map((element, idx) => (
+          <li key={idx}>
             <img src={element.img} />
+            <p>name: {element.name}</p>
+            <p>price: {element.price}</p>
+            <p>strength: {element.strength}</p>
+            <p>agility: {element.agility}</p>
+            <button
+              onClick={() => {
+                handleAddFighter(element);
+              }}
+            >
+              Add
+            </button>
           </li>
-          <li>name: {element.name}</li>
-          <li>price: {element.price}</li>
-          <li>strength: {element.strength}</li>
-          <li>agility: {element.agility}</li>
-          <button
-            onClick={() => {
-              handleAddFighter(element);
-            }}
-          >
-            Add
-          </button>
-        </ul>
-      ))}
+        ))}
+      </ul>
     </>
   );
 };
